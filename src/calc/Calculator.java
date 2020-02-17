@@ -185,6 +185,7 @@ public class Calculator extends JFrame implements ActionListener {
 				temp = Double.parseDouble(jftResult.getText());
 				solveTemp /= temp; 
 				jftResult.setText("" + solveTemp);
+				
 			}
 		}
 	}
