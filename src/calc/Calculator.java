@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent; 
@@ -34,6 +36,11 @@ public class Calculator extends JFrame implements ActionListener {
 	JButton btn0;
 	double temp;
 	double solveTemp;
+	boolean divide;
+	boolean multiply;
+	boolean subtract;
+	boolean add;
+	boolean percentage;
 	
 	String display = "";
 	
@@ -136,7 +143,49 @@ public class Calculator extends JFrame implements ActionListener {
 			display = jftResult.getText();
 			jftResult.setText(display + "2");
 		}
-		
-		
+		if(e.getSource()==btn3) {
+			display = jftResult.getText();
+			jftResult.setText(display + "3");
+		}
+		if(e.getSource()==btn4) {
+			display = jftResult.getText();
+			jftResult.setText(display + "4");
+		}
+		if(e.getSource()==btn5) {
+			display = jftResult.getText();
+			jftResult.setText(display + "5");
+		}
+		if(e.getSource()==btn6) {
+			display = jftResult.getText();
+			jftResult.setText(display + "6");
+		}
+		if(e.getSource()==btn7) {
+			display = jftResult.getText();
+			jftResult.setText(display + "7");
+		}
+		if(e.getSource()==btn8) {
+			display = jftResult.getText();
+			jftResult.setText(display + "8");
+		}
+		if(e.getSource()==btn9) {
+			display = jftResult.getText();
+			jftResult.setText(display + "9");
+		}
+		if(e.getSource()==btn0) {
+			display = jftResult.getText();
+			jftResult.setText(display + "0");
+		}
+		if(e.getSource()==btnDivide) {
+			solveTemp = Double.parseDouble(jftResult.getText());
+			divide = true;
+			jftResult.setText("");
+		}
+		if(e.getSource()==btnEquals) {
+			if(divide==true) { 
+				temp = Double.parseDouble(jftResult.getText());
+				solveTemp /= temp; 
+				jftResult.setText("" + solveTemp);
+			}
+		}
 	}
 }
